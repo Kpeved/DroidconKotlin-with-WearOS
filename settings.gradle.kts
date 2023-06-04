@@ -50,8 +50,8 @@ dependencyResolutionManagement {
         create("libs") {
             val kotlinRef = version("kotlin", kotlinVersion)
             val sqldelightRef = version("sqldelight", sqldelightVersion)
-            val composeRef = version("compose", "1.5.0-dev1049")
-            val composeCompilerRef = version("compose-compiler", "1.5.0-dev1049")
+            val composeRef = version("compose", "1.5.0-beta01")
+            val composeCompilerRef = version("compose-compiler", "1.4.5")
             val composeActivityRef = version("composeActivity", "1.6.1")
             val composeNavigationRef = version("composeNavigation", "2.5.3")
             val splashcreenRef = version("splashscreen", "1.0.0")

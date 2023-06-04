@@ -24,7 +24,7 @@ android {
 
     compileSdk = androidCompileSdk.toInt()
     defaultConfig {
-        applicationId = "co.touchlab.droidcon.london"
+        applicationId = "co.touchlab.droidcon.wear"
         minSdk = androidMinSdk.toInt()
         targetSdk = androidTargetSdk.toInt()
         versionCode = 20010
