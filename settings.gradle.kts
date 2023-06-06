@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":wear")
+
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -18,6 +21,7 @@ pluginManagement {
         id("com.squareup.sqldelight") version sqldelightVersion
         id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
         id("org.jetbrains.compose") version "1.2.0"
+        id("com.android.application") version "7.2.1"
     }
 
     resolutionStrategy {
