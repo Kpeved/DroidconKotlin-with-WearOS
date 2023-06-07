@@ -9,12 +9,14 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
-import androidx.wear.compose.navigation.composable
 import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
 import co.touchlab.droidconWear.R
 import co.touchlab.droidconWear.presentation.theme.DroidconTheme
+import com.google.android.horologist.annotations.ExperimentalHorologistApi
 import com.google.android.horologist.compose.navscaffold.WearNavScaffold
+import com.google.android.horologist.compose.navscaffold.scrollable
 
+@OptIn(ExperimentalHorologistApi::class)
 @Composable
 fun WearApp(greetingName: String) {
     DroidconTheme {
@@ -24,8 +26,8 @@ fun WearApp(greetingName: String) {
             navController = navController,
             startDestination = "start"
         ) {
-            composable("start") {
-
+            scrollable("start") {
+                SessionsList(it.scrollableState)
             }
         }
     }
