@@ -18,10 +18,9 @@ import com.google.android.horologist.compose.navscaffold.scrollable
 
 @OptIn(ExperimentalHorologistApi::class)
 @Composable
-fun WearApp(greetingName: String) {
+fun WearApp() {
     DroidconTheme {
         val navController = rememberSwipeDismissableNavController()
-
         WearNavScaffold(
             navController = navController,
             startDestination = "start"
@@ -46,11 +45,11 @@ fun Greeting(greetingName: String) {
 @Preview(device = Devices.WEAR_OS_SMALL_ROUND, showSystemUi = true)
 @Composable
 fun DefaultPreview() {
-    WearApp("Preview Android")
+    WearApp()
 }
 
 @Preview(device = Devices.WEAR_OS_RECT, showSystemUi = true)
 @Composable
 fun DefaultPreviewRect() {
-    WearApp("Preview Android")
+    WearApp()
 }

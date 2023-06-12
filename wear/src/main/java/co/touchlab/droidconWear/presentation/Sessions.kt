@@ -1,7 +1,12 @@
 package co.touchlab.droidconWear.presentation
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.ScalingLazyListState
 import androidx.wear.compose.material.ListHeader
@@ -18,9 +23,11 @@ fun SessionsList(state: ScalingLazyListState) {
         }
         items(20){
             SessionCard(
-                Session(
+                WearSession(
                     "Wear Compose",
-                    "Creating your first wear app"
+ "Mikhail Kulaha",
+                    "at Lovelas",
+                    "10:20 am"
                 )
             )
         }
@@ -28,11 +35,17 @@ fun SessionsList(state: ScalingLazyListState) {
 }
 
 @Composable
-fun SessionCard(session: Session) {
+fun SessionCard(session: WearSession) {
     TitleCard(
         onClick = { },
-        title = { Text(text = session.title) }) {
-        Text(session.description)
+        title = { Text(text = session.title) },
+        time = {Text(text = session.startTime)}
+    ) {
+        Column {
+            Text(session.room)
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(session.speakers)
+        }
     }
 }
 
@@ -40,14 +53,18 @@ fun SessionCard(session: Session) {
 @Composable
 fun SessionCardPreview() {
     SessionCard(
-        Session(
+        WearSession(
             "Wear Compose",
-            "Creating your first wear app"
+            "Mikhail Kulaha",
+            "at Lovelas",
+            "10:20 am"
         )
     )
 }
 
-data class Session(
+data class WearSession(
     val title: String,
-    val description: String,
+    val speakers: String,
+    val room: String,
+    val startTime: String
 )

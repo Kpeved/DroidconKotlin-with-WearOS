@@ -46,7 +46,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":shared"))
 
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
     implementation("androidx.core:core-ktx:1.8.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     implementation("com.google.android.gms:play-services-wearable:17.1.0")
