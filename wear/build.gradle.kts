@@ -70,6 +70,9 @@ dependencies {
     implementation("com.google.android.horologist:horologist-compose-layout:${rootProject.extra["horologist_version"]}")
     implementation("com.google.android.horologist:horologist-tiles:${rootProject.extra["horologist_version"]}")
     implementation("androidx.wear.watchface:watchface-complications-data-source-ktx:1.1.1")
+    implementation("androidx.compose.material:material-icons-core")
+    implementation("androidx.compose.material:material-icons-extended")
+
     androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")

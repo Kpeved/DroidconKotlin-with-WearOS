@@ -7,9 +7,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.wear.compose.material.HorizontalPageIndicator
 import androidx.wear.compose.material.MaterialTheme
+import androidx.wear.compose.material.PageIndicatorStyle.Companion.Curved
+import androidx.wear.compose.material.PositionIndicator
+import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.Text
+import androidx.wear.compose.material.TimeText
+import androidx.wear.compose.material.Vignette
+import androidx.wear.compose.material.VignettePosition.Companion.TopAndBottom
+import androidx.wear.compose.material.rememberSwipeToDismissBoxState
+import androidx.wear.compose.navigation.SwipeDismissableNavHost
+import androidx.wear.compose.navigation.composable
 import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
+import androidx.wear.compose.navigation.rememberSwipeDismissableNavHostState
 import co.touchlab.droidconWear.R
 import co.touchlab.droidconWear.presentation.theme.DroidconTheme
 import com.google.android.horologist.annotations.ExperimentalHorologistApi
@@ -20,13 +31,34 @@ import com.google.android.horologist.compose.navscaffold.scrollable
 @Composable
 fun WearApp() {
     DroidconTheme {
+        // val navController = rememberSwipeDismissableNavController()
+        // Scaffold(
+        //     vignette = { Vignette(TopAndBottom) },
+        //     positionIndicator = { PositionIndicator(scrollState) },
+        //     timeText = { TimeText() },
+        //     pageIndicator = { HorizontalPageIndicator(pageIndicatorState)}
+        // ) {
+            // Main content
+        // }
+        val swipeToDismissBoxState = rememberSwipeToDismissBoxState()
         val navController = rememberSwipeDismissableNavController()
+        // SwipeDismissableNavHost(
+        //     navController = navController,
+        //     state = rememberSwipeDismissableNavHostState(swipeToDismissBoxState),
+        //     startDestination = "Start"
+        // ){
+        //     composable("Start"){
+        //
+        //     }
+        // }
         WearNavScaffold(
             navController = navController,
+            timeText = {  },
             startDestination = "start"
         ) {
             scrollable("start") {
                 SessionsList(it.scrollableState)
+                // CurvedSample()
             }
         }
     }
